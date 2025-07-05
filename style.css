@@ -1,4 +1,140 @@
+
 html {
   height: 100%;
   width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #f8c2d4 0%, #f4a6cd 50%, #f0a0c9 100%);
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  text-align: center;
+  max-width: 600px;
+  padding: 40px;
+}
+
+.title {
+  font-size: 3.5rem;
+  color: #333;
+  margin-bottom: 60px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.icons-section {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+
+.icon-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 8px;
+  width: 120px;
+  height: 120px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.icon.sun {
+  background: linear-gradient(135deg, #ffa726, #ff9800);
+}
+
+.icon.snowflake {
+  background: linear-gradient(135deg, #81d4fa, #03a9f4);
+}
+
+.icon.cloud {
+  background: linear-gradient(135deg, #a5d6a7, #4caf50);
+}
+
+.icon.leaf {
+  background: linear-gradient(135deg, #90caf9, #2196f3);
+}
+
+.decorative-line {
+  font-size: 1.5rem;
+  color: #666;
+  margin: 0 20px;
+}
+
+.notebook {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notebook-icon {
+  font-size: 4rem;
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.1));
+}
+
+.quote-section {
+  margin-top: 20px;
+}
+
+.quote {
+  font-size: 1.2rem;
+  color: #333;
+  line-height: 1.6;
+  font-style: italic;
+  max-width: 400px;
+  margin: 0 auto;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .icons-section {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .icon-grid {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .icon {
+    font-size: 1.5rem;
+  }
+  
+  .notebook-icon {
+    font-size: 3rem;
+  }
+  
+  .quote {
+    font-size: 1rem;
+  }
 }
