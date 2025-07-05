@@ -13,6 +13,16 @@
       <button class="back-btn" onclick="window.history.back()">← Back</button>
       <h1 class="journal-title">✨ My Beautiful Journal ✨</h1>
       <div class="date-display" id="journal-date"></div>
+      
+      <div class="auth-section">
+        <div id="auth-status"></div>
+        <div id="auth-login" style="display: none;">
+          <script
+            authed="location.reload()"
+            src="https://auth.util.repl.co/script.js"
+          ></script>
+        </div>
+      </div>
     </div>
     
     <div class="journal-pages">
@@ -20,7 +30,8 @@
         <div class="page-lines">
           <div class="journal-entry">
             <h3>💭 Today's Thoughts</h3>
-            <textarea placeholder="What's on your mind today?" class="journal-textarea"></textarea>
+            <div id="thoughts-content" class="journal-display"></div>
+            <textarea id="thoughts-textarea" placeholder="What's on your mind today?" class="journal-textarea" style="display: none;"></textarea>
           </div>
         </div>
       </div>
@@ -29,7 +40,8 @@
         <div class="page-lines">
           <div class="journal-entry">
             <h3>🌟 Amazing Things</h3>
-            <textarea placeholder="What made you smile today?" class="journal-textarea"></textarea>
+            <div id="amazing-content" class="journal-display"></div>
+            <textarea id="amazing-textarea" placeholder="What made you smile today?" class="journal-textarea" style="display: none;"></textarea>
           </div>
           
           <div class="mood-section">
@@ -41,6 +53,7 @@
               <span class="mood-emoji" data-mood="silly">🤪</span>
               <span class="mood-emoji" data-mood="dreamy">😍</span>
             </div>
+            <div id="selected-mood" class="selected-mood-display"></div>
           </div>
         </div>
       </div>
