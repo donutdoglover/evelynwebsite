@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>My Journal</title>
+  <link href="journal.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <div class="journal-container">
+    <div class="journal-header">
+      <button class="back-btn" onclick="window.history.back()">← Back</button>
+      <h1 class="journal-title">✨ My Beautiful Journal ✨</h1>
+      <div class="date-display" id="journal-date"></div>
+    </div>
+    
+    <div class="journal-pages">
+      <div class="journal-page left-page">
+        <div class="page-lines">
+          <div class="journal-entry">
+            <h3>💭 Today's Thoughts</h3>
+            <textarea placeholder="What's on your mind today?" class="journal-textarea"></textarea>
+          </div>
+        </div>
+      </div>
+      
+      <div class="journal-page right-page">
+        <div class="page-lines">
+          <div class="journal-entry">
+            <h3>🌟 Amazing Things</h3>
+            <textarea placeholder="What made you smile today?" class="journal-textarea"></textarea>
+          </div>
+          
+          <div class="mood-section">
+            <h4>Today's Mood:</h4>
+            <div class="mood-emojis">
+              <span class="mood-emoji" data-mood="happy">😊</span>
+              <span class="mood-emoji" data-mood="excited">🤩</span>
+              <span class="mood-emoji" data-mood="calm">😌</span>
+              <span class="mood-emoji" data-mood="silly">🤪</span>
+              <span class="mood-emoji" data-mood="dreamy">😍</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="journal-footer">
+      <div class="decorative-elements">
+        <span>🦋</span>
+        <span>🌸</span>
+        <span>✨</span>
+        <span>🌈</span>
+        <span>💖</span>
+      </div>
+    </div>
+  </div>
+  
+  <script src="journal.js"></script>
+</body>
+</html>

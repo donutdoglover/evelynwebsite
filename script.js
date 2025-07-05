@@ -96,8 +96,20 @@ function updateWeatherIcons(weatherData) {
   }
 }
 
+// Navigate to journal page
+function openJournal() {
+  window.location.href = 'journal.html';
+}
+
 // Call functions when the page loads
 document.addEventListener('DOMContentLoaded', () => {
   displayCurrentDate();
   fetchWeather();
+  
+  // Add click event to journal icon
+  const journalIcon = document.getElementById('journal-icon');
+  if (journalIcon) {
+    journalIcon.addEventListener('click', openJournal);
+    journalIcon.style.cursor = 'pointer';
+  }
 });
