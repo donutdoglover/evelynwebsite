@@ -29,68 +29,68 @@ function updateWeatherIcons(weatherData) {
   // Get icon elements
   const icons = document.querySelectorAll('.icon');
   
-  // Weather code mapping to emojis
-  const weatherEmojis = {
-    0: '☀️',     // Clear sky
-    1: '🌤️',     // Mainly clear
-    2: '⛅',     // Partly cloudy
-    3: '☁️',     // Overcast
-    45: '🌫️',    // Fog
-    48: '🌫️',    // Depositing rime fog
-    51: '🌦️',    // Light drizzle
-    53: '🌦️',    // Moderate drizzle
-    55: '🌦️',    // Dense drizzle
-    61: '🌧️',    // Slight rain
-    63: '🌧️',    // Moderate rain
-    65: '🌧️',    // Heavy rain
-    71: '🌨️',    // Slight snow
-    73: '🌨️',    // Moderate snow
-    75: '❄️',    // Heavy snow
-    77: '❄️',    // Snow grains
-    80: '🌦️',    // Slight rain showers
-    81: '🌧️',    // Moderate rain showers
-    82: '⛈️',    // Violent rain showers
-    85: '🌨️',    // Slight snow showers
-    86: '❄️',    // Heavy snow showers
-    95: '⛈️',    // Thunderstorm
-    96: '⛈️',    // Thunderstorm with slight hail
-    99: '⛈️'     // Thunderstorm with heavy hail
+  // Weather code mapping to text descriptions
+  const weatherDescriptions = {
+    0: 'Clear',     // Clear sky
+    1: 'Mostly Clear',     // Mainly clear
+    2: 'Partly Cloudy',     // Partly cloudy
+    3: 'Overcast',     // Overcast
+    45: 'Foggy',    // Fog
+    48: 'Foggy',    // Depositing rime fog
+    51: 'Light Drizzle',    // Light drizzle
+    53: 'Drizzle',    // Moderate drizzle
+    55: 'Heavy Drizzle',    // Dense drizzle
+    61: 'Light Rain',    // Slight rain
+    63: 'Rain',    // Moderate rain
+    65: 'Heavy Rain',    // Heavy rain
+    71: 'Light Snow',    // Slight snow
+    73: 'Snow',    // Moderate snow
+    75: 'Heavy Snow',    // Heavy snow
+    77: 'Snow',    // Snow grains
+    80: 'Rain Showers',    // Slight rain showers
+    81: 'Heavy Showers',    // Moderate rain showers
+    82: 'Violent Showers',    // Violent rain showers
+    85: 'Snow Showers',    // Slight snow showers
+    86: 'Heavy Snow',    // Heavy snow showers
+    95: 'Thunderstorm',    // Thunderstorm
+    96: 'Thunderstorm',    // Thunderstorm with slight hail
+    99: 'Severe Storm'     // Thunderstorm with heavy hail
   };
   
   // Update each icon with weather-related information
   if (icons.length >= 4) {
     // Primary weather condition
-    icons[0].textContent = weatherEmojis[weather_code] || '☀️';
+    icons[0].textContent = weatherDescriptions[weather_code] || 'Clear';
     icons[0].title = `Current weather in St. Louis`;
     
     // Temperature indicator
     if (temperature_2m > 80) {
-      icons[1].textContent = '🔥'; // Hot
+      icons[1].textContent = 'Hot'; // Hot
     } else if (temperature_2m > 60) {
-      icons[1].textContent = '🌡️'; // Mild
+      icons[1].textContent = 'Mild'; // Mild
     } else if (temperature_2m > 32) {
-      icons[1].textContent = '🧊'; // Cool
+      icons[1].textContent = 'Cool'; // Cool
     } else {
-      icons[1].textContent = '❄️'; // Freezing
+      icons[1].textContent = 'Freezing'; // Freezing
     }
     icons[1].title = `${Math.round(temperature_2m)}°F`;
     
     // Wind indicator
     if (wind_speed_10m > 15) {
-      icons[2].textContent = '💨'; // Windy
+      icons[2].textContent = 'Windy'; // Windy
     } else if (wind_speed_10m > 5) {
-      icons[2].textContent = '🍃'; // Breezy
+      icons[2].textContent = 'Breezy'; // Breezy
     } else {
-      icons[2].textContent = '🌬️'; // Calm
+      icons[2].textContent = 'Calm'; // Calm
     }
     icons[2].title = `Wind: ${Math.round(wind_speed_10m)} mph`;
     
     // Time of day indicator
     const hour = new Date().getHours();
     if (hour >= 6 && hour < 18) {
-      icons[3].textContent = '☀️'; // Day
+      icons[3].textContent = 'Day'; // Day
     } else {
-      icons[3].textContent = '🌙'; // Night
+      icons[3].textContent = 'Night'; // Night
     }
     icons[3].title = `Current time in St. Louis`;
   }
