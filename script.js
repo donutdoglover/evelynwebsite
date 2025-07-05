@@ -85,14 +85,9 @@ function updateWeatherIcons(weatherData) {
     }
     icons[2].title = `Wind: ${Math.round(wind_speed_10m)} mph`;
     
-    // Time of day indicator
-    const hour = new Date().getHours();
-    if (hour >= 6 && hour < 18) {
-      icons[3].textContent = 'Day'; // Day
-    } else {
-      icons[3].textContent = 'Night'; // Night
-    }
-    icons[3].title = `Current time in St. Louis`;
+    // Remove the time of day indicator - keep the fourth icon empty or use it for something else
+    icons[3].textContent = '';
+    icons[3].title = '';
   }
 }
 
