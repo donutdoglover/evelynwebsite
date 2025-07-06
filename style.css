@@ -41,6 +41,9 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 40px;
+  position: relative;
+  z-index: 2
+  
 }
 
 .icons-section {
@@ -145,5 +148,100 @@ body {
 
   .quote {
     font-size: 1rem;
+    
+    }     
   }
+
+@keyframes moveClouds {
+  0% {
+    transform: translateX(0); /* Start position */
+  }
+  100% {
+    transform: translateX(100vw); /* Move all the way across the screen */
+  }
+}
+
+.cloud {
+  position: absolute;
+  width: 100px; /* Size of the cloud */
+  height: 60px; /* Size of the cloud */
+  background: white; /* Color of the cloud */
+  border-radius: 50px; /* Make it round */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Make it look fluffy */
+  animation: moveClouds 20s linear infinite; /* Animation effect */
+}
+
+.cloud:before,
+.cloud:after {
+  content: ''; /* Add more cloud shapes */
+  position: absolute;
+  background: white;
+  border-radius: 50px;
+}
+
+.cloud:before {
+  width: 70px; 
+  height: 70px; 
+  top: -20px; /* Adjust its position */
+  left: 10px; /* Position it slightly to the left */
+}
+
+.cloud:after {
+  width: 60px; 
+  height: 60px; 
+  top: -15px; /* Adjust its position */
+  right: 10px; /* Position it slightly to the right */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: #87CEFA; /* Light blue background */
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* For positioning clouds and mountains */
+}
+.mountain {
+  position: absolute;
+  width: 150px;
+  height: 100px;
+  background: darkgrey; /* Mountain color */
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%); /* Create triangle shape for mountains */
+  opacity: 0.8; /* Make it slightly transparent */
+}
+
+.cloud {
+  position: absolute;
+  width: 100px; /* Size of the cloud */
+  height: 60px; /* Size of the cloud */
+  background: lightblue; /* Color of the cloud */
+  border-radius: 20px; /* Make it round */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Make it look fluffy */
+  animation: moveClouds 20s linear infinite; /* Animation effect */
+  z-index: 1;
+}
+
+.cloud:before,
+.cloud:after {
+  content: ''; /* Add more cloud shapes */
+  position: absolute;
+  background: white;
+  border-radius: 50px;
+}
+
+.cloud:before {
+  width: 70px; 
+  height: 70px; 
+  top: -20px; /* Adjust its position */
+  left: 10px; /* Position it slightly to the left */
+}
+
+.cloud:after {
+  width: 60px; 
+  height: 60px; 
+  top: -15px; /* Adjust its position */
+  right: 10px; /* Position it slightly to the right */
 }
